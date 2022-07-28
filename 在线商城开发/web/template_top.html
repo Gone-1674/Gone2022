@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/template.css" />
+	<meta charset="utf-8">
+	<title></title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+
+
+        $(function () {
+			$("#q").html(window.sessionStorage.getItem("province"))
+			$("#le").html("欢迎你,"+window.sessionStorage.getItem("user"))
+        	setInterval(Status,50)
+		})
+
+		function Status() {
+			$("#shop").html(window.sessionStorage.getItem("key"))
+		}
+	</script>
+</head>
+<body>
+<!-- top  B -->
+<div class="div1">
+	<div class="center z1">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+				 class="bi bi-geo-alt" viewBox="0 0 16 16">
+				<path
+						d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+				<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+			</svg>
+			<span id="q">福建</span>
+		</div>
+		<ul>
+			<li><a href="" id="le">你好，请登录</a></li>
+			<li><a href="">免费注册</a></li>
+			<li><a href="">我的订单</a></li>
+			<li><a href="">商品分类</a></li>
+			<li><a href="">网站导航</a></li>
+			<li><a href="">联系客服</a></li>
+			<li><a href="">客户服务</a></li>
+		</ul>
+	</div>
+</div>
+<!-- top E -->
+
+<!-- logo B -->
+<div class="div2">
+	<div class="center z2">
+		<img src="images/logo2.PNG" alt=""/>
+		<div class="z2 k">
+			<input type="text" id="t"/>
+			<input type="button" value="搜索" id="b" />
+		</div>
+		<div class="z2 a">
+			<div id="p">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+					<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+				</svg>
+				<a href="/myweb/commodity/show" style="color: #e1251b;">我的购物车</a>
+			</div>
+			<span id="shop">0</span>
+		</div>
+		<ul>
+			<li><a href=""style="color: #e1251b;">高端电脑</a></li>
+			<li><a href="">衣服</a></li>
+			<li><a href="">水果</a></li>
+			<li><a href="">冰箱</a></li>
+			<li><a href="">洗衣液</a></li>
+			<li><a href="">手机壳</a></li>
+		</ul>
+
+		<div class=" d">
+			<div>
+				<a href="" style="color: #e1251b;font-weight: 700;font-size: 15px;">秒杀</a>
+				<a href="" style="color: #e1251b;font-weight: 700;font-size: 15px;">优惠卷</a>
+				<a href="">品牌闪购</a>
+				<a href="">稿定家电</a>
+				<a href="">稿定超市</a>
+				<a href="">拍卖</a>
+				<a href="">稿定生鲜</a>
+				<a href="">稿定国际</a>
+				<a href="">PLUS会员</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- logo E -->
+</body>
+</html>

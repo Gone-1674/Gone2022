@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Electrical_app</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<script type="text/javascript">
+		var count=window.sessionStorage.getItem("key");
+		$(function() {
+			/*			var count=0;
+			$("a").click(function(){
+				// window.localStorage.setItem('count',++count)
+				// var s=window.localStorage.getItem('count');
+				// $("#shop").html(++count)         //购物车数量
+
+				// $("a").attr("href","javascript:void(0)")
+
+			})*/
+
+			/*			$("#gone").on("click",function () {
+
+                $.ajax({
+					url:"CommodityShow",
+					dataType:"json",
+					async:true,
+					type:"get",
+					success:function (resp) {
+
+					},
+					error:function () {
+
+
+					}
+				});
+
+			})*/
+
+		    $(".ad").click(function () {
+		    	++count;
+                window.sessionStorage.setItem("key",String(count));
+			})
+
+		});
+	</script>
+</head>
+<body style="background-color: whitesmoke;overflow: scroll;overflow-x:hidden;padding: 0;">
+<div class="gone">
+	<span id="shop"></span>
+	<div >
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+			<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+		</svg>
+		<a href="/myweb/commodity/show" style="color: #e1251b;" id="gone">我的购物车</a>
+	</div>
+
+</div>
+<div class="center m">
+	<ul>
+		<li>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+				<path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"/>
+			</svg>
+			<a href="#TV"> 电视</a>
+		</li>
+		<li>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+				<path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
+				<path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
+			</svg>
+			<a href="#RF">冰箱洗衣机</a>
+		</li>
+		<li>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
+				<path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+			</svg>
+			<a href="#AC">空调</a>
+		</li>
+		<li>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+				<path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+				<path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+			</svg>
+			<a href="#EA">厨卫电器</a>
+		</li>
+		<li>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+				<path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+				<path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			</svg>
+			<a href="#MP">电子手机</a>
+		</li>
+	</ul>
+
+	<div class="xx">
+		<ul>
+			<li><a href=""><img src="images/洗衣机.PNG" /> </a></li>
+			<li><a href=""><img src="images/空调.PNG" /> </a></li>
+			<li><a href=""><img src="images/苹果手机.PNG" /> </a></li>
+			<li><a href=""><img src="images/高压锅.PNG" /> </a></li>
+		</ul>
+	</div>
+
+	<div class="cc">
+		<div class="c1" id="MP">
+			<img src="images/手机1.PNG" />
+			<img src="images/手机2.PNG" />
+			<img src="images/手机3.PNG" />
+			<img src="images/手机4.PNG" />
+			<img src="images/手机5.PNG" />
+			<span>￥559 </span>
+			<span>￥1299</span>
+			<span>￥1099</span>
+			<span>￥1299</span>
+			<span>￥999</span>
+
+
+			<a href="/myweb/commodity/add?id=1&name=纽曼P80 Pro&price=559" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=2&name=Redmi Node9 Pro&price=1299" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=3&name=荣耀Play5T&price=1099" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=4&name=vivo iQOO&price=1299" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=5&name=Redmi Node9 4G&price=999" class="ad">加入购物车</a>
+
+		</div>
+
+		<div class="c2" id="AC">
+			<img src="images/空调1.PNG" />
+			<img src="images/空调2.PNG" />
+			<img src="images/空调3.PNG" />
+			<img src="images/空调4.PNG" />
+			<img src="images/空调5.PNG" />
+			<span>￥1999 </span>
+			<span>￥1749</span>
+			<span>￥6899</span>
+			<span>￥2299</span>
+			<span>￥2599</span>
+
+			<a href="/myweb/commodity/add?id=6&name=Mi&price=1999" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=7&name=TCL&price=1749 " class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=8&name=GREEN&price=6899 " class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=9&name=Midea&price=2299 " class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=10&name=Aux&price=2599" class="ad">加入购物车</a>
+
+		</div>
+
+		<div class="c2" id="RF">
+			<img src="images/冰箱1.PNG" />
+			<img src="images/冰箱2.PNG" />
+			<img src="images/冰箱3.PNG" />
+			<img src="images/冰箱4.PNG" />
+			<img src="images/冰箱5.PNG" />
+			<span>￥4789 </span>
+			<span>￥3795</span>
+			<span>￥4698</span>
+			<span>￥868</span>
+			<span>￥8999</span>
+
+			<a href="/myweb/commodity/add?id=11&name=Hair&price=4789" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=12&name=Midea&price=3795" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=13&name=Midea&price=4698" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=14&name=SKYWORTH&price=868" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=15&name=SIEMENS&price=8999" class="ad">加入购物车</a>
+
+		</div>
+
+		<div class="c2" id="TV">
+			<img src="images/电视1.PNG" />
+			<img src="images/电视2.PNG" />
+			<img src="images/电视3.PNG" />
+			<img src="images/电视4.PNG" />
+			<img src="images/电视5.PNG" />
+			<span>￥2999 </span>
+			<span>￥2899</span>
+			<span>￥2699</span>
+			<span>￥4599</span>
+			<span>￥2799</span>
+
+			<a href="/myweb/commodity/add?id=16&name=荣耀&price=2999" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=17&name=小米&price=2899" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=18&name=Midea&price=2699" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=19&name=TCL&price=4599" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=20&name=创维&price=2799" class="ad">加入购物车</a>
+
+		</div>
+
+		<div class="c2" id="EA">
+			<img src="images/生活1.PNG" />
+			<img src="images/生活2.PNG" />
+			<img src="images/生活3.PNG" />
+			<img src="images/生活4.PNG" />
+			<img src="images/生活5.PNG" />
+			<span>￥268 </span>
+			<span>￥19.9</span>
+			<span>￥17.9</span>
+			<span>￥9.8</span>
+			<span>￥11.9</span>
+
+			<a href="/myweb/commodity/add?id=21&name=洗衣机&price=268" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=22&name=夹子&price=19.9" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=23&name=扫把&price=17.9" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=24&name=座垫&price=9.8" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=25&name=牙杯&price=11.9" class="ad">加入购物车</a>
+
+		</div>
+
+		<div class="c2">
+			<img src="images/厨房1.PNG" />
+			<img src="images/厨房2.PNG" />
+			<img src="images/厨房3.PNG" />
+			<img src="images/厨房4.PNG" />
+			<img src="images/厨房5.PNG" />
+			<span>￥153 </span>
+			<span>￥24.6</span>
+			<span>￥125</span>
+			<span>￥12.9</span>
+			<span>￥9.9</span>
+
+			<a href="/myweb/commodity/add?id=26&name=橱柜&price=153" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=27&name=毛球&price=24.6" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=28&name=架子&price=125" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=29&name=过滤器&price=12.9" class="ad">加入购物车</a>
+			<a href="/myweb/commodity/add?id=30&name=湿巾&price=9.9" class="ad">加入购物车</a>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

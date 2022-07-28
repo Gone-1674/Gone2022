@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>login</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/css.css" />
+	<script type="text/javascript">
+		$(function(){
+			$("#a").click(function(){
+				$(".p2 div:first-child").html("用户注册")
+				$("#sub").attr("value","注册并登录")
+				$("#span").html("<input type='password' placeholder='确认密码' style='width: 290px; height: 38px;' name='password2' class='pwd2'>")
+				$("#a").html("在线游览")
+				$("#a").click(function () {
+					$("#a").attr("href","/myweb/index.jsp");
+				})
+				$("#form").attr("action","/myweb/user/register")
+				$("#sub").click(function(){
+					if($(".pwd1").val()==$(".pwd2").val()&&$(".pwd1").val().trim()!=0&&$(".pwd2").val().trim()!=0){
+						window.sessionStorage.setItem("user",$("#username").val())
+						alert("注册成功")
+					}else{
+						alert("注册失败,请重新注册")
+						location.reload()
+					}
+				})
+			})
+		})
+
+
+
+	</script>
+</head>
+<body>
+<!-- logo B -->
+<div class="div1">
+	<div class="center div1">
+		<img src="images/logo2.PNG" />
+		<p>欢迎登陆</p>
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+				 class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+				<path
+						d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+				<path
+						d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+			</svg>
+			<span><a href="">登录页面，调查问卷</a></span>
+		</div>
+	</div>
+</div>
+<!-- logo E -->
+
+<!-- top B -->
+<div class="div2">
+	<div class=" c">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+			 class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+			<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+			<path
+					d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+		</svg>
+		<p>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《网站隐私政策》已上线，将更有利于保护您的个人隐私。</p>
+	</div>
+</div>
+<!-- top E -->
+
+<!-- body B -->
+<div class="div3">
+	<div class="w">
+		<div class="p1">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+				 class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+				<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+				<path
+						d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+			</svg>
+			<p>网站不会以任何理由要求您转账汇款，谨防诈骗。</p>
+		</div>
+		<div class="p2">
+			<div align="center"><a href="">扫码登陆</a></div>
+			<div align="center"><a href="">账号登陆</a></div>
+		</div>
+		<div class="p3">
+			<div class="blank"></div>
+			<form action="/myweb/user/login" method="post" id="form">
+				<div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							 class="bi bi-person-circle" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+							<path fill-rule="evenodd"
+								  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+						</svg>
+						<input type="text" placeholder="用户名" name="username" id="username"/>
+					</div>
+					<div style="margin-top: 10px;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							 class="bi bi-key-fill" viewBox="0 0 16 16">
+							<path
+									d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+						</svg>
+						<input type="password" placeholder="密码" name="password" class="pwd1"/>
+					</div>
+
+					<span id="span">
+								<input type="checkbox" name="status" value="ok"/>十天内免登录
+								<a href="">忘记密码?</a>
+							</span>
+					<div class="s" >
+						<input type="submit" value="登录" id="sub"  >
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="p4">
+			<div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+				</svg>
+				<span><a style="color: #b61d1d;" id="a">立即注册</a></span>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- body E -->
+
+<!-- foot B -->
+<div class="div4" >
+	<div class="center b" >
+		<a href="">关于我们 |</a>
+		<a href="">联系我们 |</a>
+		<a href="">人才招聘 |</a>
+		<a href="">商家入驻 |</a>
+		<a href="">广告服务 |</a>
+		<a href="">友情链接 |</a>
+		<a href="">销售联盟 |</a>
+		<span >
+				  Copyright © 2021-2022  软四3组版权所有
+		</span>
+	</div>
+</div>
+<!-- foot E -->
+</body>
+</html>
